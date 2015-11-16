@@ -1,11 +1,9 @@
-// TMXMiddleware.hpp
-//
-// Dan Alexander 01/06/2015
-// Copyright(c) 2014
-//
-/* Utility classes for handling Tiled TMX files.
- */
- 
+// Copyright 2015 Dan Alexander
+// Distributed under MIT license, or public domain if desired and
+// recognized in your jurisdiction.
+// See file LICENSE for detail or copy at https://github.com/lxndrdagreat/tiledjson/blob/master/LICENSE
+
+
 #ifndef TMXMIDDLEWARE_HPP
 #define TMXMIDDLEWARE_HPP
 #include <map>
