@@ -15,22 +15,22 @@ namespace TILEDJSON_NAMESPACE{
 		std::string key;
 		std::string value;
 		
-		int ToInt(){
+		int asInt(){
 			return atoi(value.c_str());
 		}
 		
-		std::string ToString(){
+		std::string asString(){
 			return value;
 		}
 		
-		const char* ToCString(){
+		const char*asCString(){
 			return value.c_str();
 		}
 	};
 	
 	class PropertyCollection {
 		private:
-			std::vector<Property>				mProperties;
+			std::vector<Property>					mProperties;
 			std::map<std::string, unsigned int>		mPropertiesNameMap;
 			
 		public:

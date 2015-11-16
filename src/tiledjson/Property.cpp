@@ -32,7 +32,7 @@ namespace TILEDJSON_NAMESPACE{
 	}
 	
 	int PropertyCollection::getValueAsInt(const std::string& key){
-		return mProperties[mPropertiesNameMap[key]].ToInt();
+		return mProperties[mPropertiesNameMap[key]].asInt();
 	}
 	
 	void PropertyCollection::add(Property property){
