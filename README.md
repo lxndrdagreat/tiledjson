@@ -19,6 +19,17 @@ JsonCpp is used by the `JsonTMXImporter` class to parse the JSON files. Using
 JsonCpp's [amalgamated source and header](https://github.com/open-source-parsers/jsoncpp#generating-amalgamated-source-and-header) is very simple and the recommended approach.
 
 ## Quick Start
+Start by exporting your map's TMX file to JSON. In Tiled, goto:
+
+```
+- File
+  - Export As (Ctrl-E)
+```
+
+And select `json map files (*.json)` from the "Save as type" drop down. You will also
+need to make sure you have the map's property "Tile Layer Format" set to "CSV". This
+is because zlib compression is not supported; this will hopefully be unnecessary in
+the near future.
 
 Using tiledjson is fairly simple:
 
