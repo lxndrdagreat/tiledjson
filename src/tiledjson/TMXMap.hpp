@@ -17,7 +17,7 @@
 namespace TILEDJSON_NAMESPACE
 {
 
-class TileMap
+class TMXMap
 {
 private:
 
@@ -59,8 +59,8 @@ private:
 	unsigned int 								mUnitHeight;
 	
 public:
-	TileMap();
-	~TileMap();
+	TMXMap();
+	~TMXMap();
 
 	void 							loadFromFile(const char *filename);
 	void 							loadFromImporter(LevelImporter *levelImporter);

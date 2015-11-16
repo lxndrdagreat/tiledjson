@@ -34,10 +34,10 @@ the near future.
 Using tiledjson is fairly simple:
 
 ```
-tiledjson::TileMap theMap("path/to/level.json");
+tiledjson::TMXMap theMap("path/to/level.json");
 ```
 
-That will attempt to open and parse the JSON file and load the data into the `TileMap`.
+That will attempt to open and parse the JSON file and load the data into the `TMXMap`.
 
 ## Features
 

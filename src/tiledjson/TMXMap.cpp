@@ -1,15 +1,15 @@
-#include "TileMap.hpp"
+#include "TMXMap.hpp"
 #include "JsonTMXImporter.hpp"
 #include <iostream>
 
 namespace TILEDJSON_NAMESPACE
 {
 
-TileMap::TileMap()
+TMXMap::TMXMap()
 {
 }
 
-TileMap::~TileMap()
+TMXMap::~TMXMap()
 {
 	mTileLayerNameMap.clear();
 	mTileLayers.clear();
@@ -30,7 +30,7 @@ TileMap::~TileMap()
 	mLayers.clear();
 }
 
-void TileMap::loadFromFile(const char *filename){
+void TMXMap::loadFromFile(const char *filename){
 	// by default, we use the json importer
 	JsonTMXImporter* jsonImporter = new JsonTMXImporter();
 	jsonImporter->load(filename);
@@ -38,7 +38,7 @@ void TileMap::loadFromFile(const char *filename){
 	delete jsonImporter;
 }
 
-void TileMap::loadFromImporter(LevelImporter *levelImporter){
+void TMXMap::loadFromImporter(LevelImporter *levelImporter){
 	
 	// Get Map Data
 	
@@ -88,39 +88,39 @@ void TileMap::loadFromImporter(LevelImporter *levelImporter){
 	mUnitHeight = levelImporter->getMapUnitHeight();
 }
 
-unsigned int TileMap::totalTileLayers(){
+unsigned int TMXMap::totalTileLayers(){
 	return mTileLayers.size();
 }
 
-unsigned int TileMap::totalObjectLayers(){
+unsigned int TMXMap::totalObjectLayers(){
 	return mObjectGroups.size();
 }
 
-std::vector<MapLayer*> TileMap::getLayers(){
+std::vector<MapLayer*> TMXMap::getLayers(){
 	return mLayers;
 }
 
-MapTileLayer* TileMap::getTileLayerByName(const std::string &name_){
+MapTileLayer*TMXMap::getTileLayerByName(const std::string &name_){
 	return (MapTileLayer*)mLayers[mTileLayerNameMap[name_]];
 }
 
-unsigned int TileMap::getWidth(){
+unsigned int TMXMap::getWidth(){
 	return mWidth;
 }
 
-unsigned int TileMap::getHeight(){
+unsigned int TMXMap::getHeight(){
 	return mHeight;
 }
 
-unsigned int TileMap::getUnitWidth(){
+unsigned int TMXMap::getUnitWidth(){
 	return mUnitWidth;
 }
 
-unsigned int TileMap::getUnitHeight(){
+unsigned int TMXMap::getUnitHeight(){
 	return mUnitHeight;
 }
 
-std::vector<unsigned int> TileMap::getTilesAtCoordinate(unsigned int x, unsigned int y){
+std::vector<unsigned int> TMXMap::getTilesAtCoordinate(unsigned int x, unsigned int y){
 	std::vector<unsigned int> return_tiles;
 	
 	for (unsigned int i = 0; i < mTileLayers.size(); ++i){
@@ -130,7 +130,7 @@ std::vector<unsigned int> TileMap::getTilesAtCoordinate(unsigned int x, unsigned
 	return return_tiles;
 }
 
-PropertyCollection TileMap::getAllPropertiesForCoordinate(unsigned int x, unsigned int y){
+PropertyCollection TMXMap::getAllPropertiesForCoordinate(unsigned int x, unsigned int y){
 	PropertyCollection all_properties;
 	
 	std::vector<unsigned int> tiles = getTilesAtCoordinate(x, y);
@@ -156,11 +156,11 @@ PropertyCollection TileMap::getAllPropertiesForCoordinate(unsigned int x, unsign
 	return all_properties;
 }
 
-MapObjectGroup* TileMap::getObjectGroupByName(const std::string &name){
+MapObjectGroup*TMXMap::getObjectGroupByName(const std::string &name){
 	return (MapObjectGroup*)mLayers[mObjectGroupNameMap[name]];
 }
 
-std::vector<MapObject> TileMap::getObjectsByName(const std::string &name){
+std::vector<MapObject> TMXMap::getObjectsByName(const std::string &name){
 	std::vector<MapObject> objects;
 	
 	for (unsigned int i = 0; i < mObjectGroups.size(); ++i){
@@ -172,15 +172,15 @@ std::vector<MapObject> TileMap::getObjectsByName(const std::string &name){
 	return objects;
 }
 
-MapTileSet& TileMap::getTileSetByName(const std::string &name){
+MapTileSet&TMXMap::getTileSetByName(const std::string &name){
 	return mTilesets[mTilesetsNameMap[name]];
 }
 
-MapTileSet& TileMap::getTileSetByFirstGID(unsigned int gid){
+MapTileSet&TMXMap::getTileSetByFirstGID(unsigned int gid){
 	return mTilesets[mTilesetsFirstGIDMap[gid]];
 }
 
-std::map<unsigned int, std::string> TileMap::getTilesetImagePathsWithGIDs(){
+std::map<unsigned int, std::string> TMXMap::getTilesetImagePathsWithGIDs(){
 	std::map<unsigned int, std::string> paths;
 	
 	for (auto& tileset : mTilesets){
@@ -190,7 +190,7 @@ std::map<unsigned int, std::string> TileMap::getTilesetImagePathsWithGIDs(){
 	return paths;
 }
 
-std::vector<std::string> TileMap::getTilesetImagePaths(){
+std::vector<std::string> TMXMap::getTilesetImagePaths(){
 	std::vector<std::string> paths;
 	
 	for (auto& tileset : mTilesets){
@@ -200,7 +200,7 @@ std::vector<std::string> TileMap::getTilesetImagePaths(){
 	return paths;
 }
 
-std::vector<MapImageLayer*> TileMap::getImageLayers(){
+std::vector<MapImageLayer*> TMXMap::getImageLayers(){
 	std::vector<MapImageLayer*> layers;
 	
 	for (unsigned int i = 0; i < mImageLayers.size(); ++i){
@@ -210,7 +210,7 @@ std::vector<MapImageLayer*> TileMap::getImageLayers(){
 	return layers;
 }
 
-MapImageLayer* TileMap::getImageLayerByName(const std::string &name){
+MapImageLayer*TMXMap::getImageLayerByName(const std::string &name){
 	return (MapImageLayer*)mLayers[mImageLayersNameMap[name]];
 }
 
