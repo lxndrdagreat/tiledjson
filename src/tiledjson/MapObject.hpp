@@ -48,29 +48,29 @@ public:
 	MapObject();
 	~MapObject();
 	
-	void						SetProperty(const std::string& key_, const std::string& value_);
-	PropertyCollection			GetProperties();
-	bool						HasProperty(const std::string& key_);
-	std::string					GetProperty(const std::string& key_);
+	void						setProperty(const std::string &key_, const std::string &value_);
+	PropertyCollection			getProperties();
+	bool						hasProperty(const std::string &key_);
+	std::string					getProperty(const std::string &key_);
 	
-	float						GetWidth();
-	float						GetHeight();
-	void						SetWidth(float width_);
-	void						SetHeight(float height_);
+	float						getWidth();
+	float						getHeight();
+	void						setWidth(float width_);
+	void						setHeight(float height_);
 	
-	float						GetX();
-	void						SetX(float x_);
-	float						GetY();
-	void						SetY(float y_);
+	float						getX();
+	void						setX(float x_);
+	float						getY();
+	void						setY(float y_);
 	
-	std::string					GetName();
-	void						SetName(const std::string& name_);
+	std::string					getName();
+	void						setName(const std::string &name_);
 	
-	MapObjectKind				GetKind();
-	void						SetKind(MapObjectKind kind_);
+	MapObjectKind				getKind();
+	void						setKind(MapObjectKind kind_);
 	
-	Polyline					GetPolyline();
-	void						SetPolyLine(const Polyline& polyline);
+	Polyline					getPolyline();
+	void						setPolyLine(const Polyline &polyline);
 };
 
 }

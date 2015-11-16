@@ -15,7 +15,7 @@ MapTileLayer::MapTileLayer(unsigned int width_, unsigned int height_, std::vecto
 {
 	mX = 0;
 	mY = 0;
-	SetTileData(width_, height_, tiledata_);
+	setTileData(width_, height_, tiledata_);
 	mType = TileLayer;
 }
 
@@ -25,7 +25,7 @@ MapTileLayer::~MapTileLayer()
 }
 
 
-void MapTileLayer::SetTileData(unsigned int width_, unsigned int height_, std::vector<unsigned int>& tiledata_){
+void MapTileLayer::setTileData(unsigned int width_, unsigned int height_, std::vector<unsigned int> &tiledata_){
 	
 	mTiles.clear();
 	
@@ -38,7 +38,7 @@ void MapTileLayer::SetTileData(unsigned int width_, unsigned int height_, std::v
 	
 }
 
-unsigned int MapTileLayer::GetTileAtCoordinate(unsigned int x, unsigned int y){
+unsigned int MapTileLayer::getTileAtCoordinate(unsigned int x, unsigned int y){
 	if (x < mX || y < mY || x >= mX + mWidth || y >= mY + mHeight){
 		// coordindate is outside the bounds of this layer.
 		return 0;

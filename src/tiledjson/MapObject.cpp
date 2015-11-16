@@ -12,85 +12,85 @@ MapObject::~MapObject()
 {
 }
 
-void MapObject::SetProperty(const std::string& key_, const std::string& value_){
+void MapObject::setProperty(const std::string &key_, const std::string &value_){
 	mProperties.set(key_, value_);
 }
 
-bool MapObject::HasProperty(const std::string& key_){
+bool MapObject::hasProperty(const std::string &key_){
 	return mProperties.hasKey(key_);
 }
 
-std::string MapObject::GetProperty(const std::string& key_){
+std::string MapObject::getProperty(const std::string &key_){
 	return mProperties[key_].value;
 }
 
-PropertyCollection MapObject::GetProperties(){
+PropertyCollection MapObject::getProperties(){
 	return mProperties;
 }
 
-float MapObject::GetHeight()
+float MapObject::getHeight()
 {
 	return mHeight;
 }
 
-std::string MapObject::GetName()
+std::string MapObject::getName()
 {
 	return mName;
 }
 
-float MapObject::GetWidth()
+float MapObject::getWidth()
 {
 	return mWidth;
 }
 
-float MapObject::GetX()
+float MapObject::getX()
 {
 	return mX;
 }
 
-float MapObject::GetY()
+float MapObject::getY()
 {
 	return mY;
 }
 
-void MapObject::SetHeight(float height_)
+void MapObject::setHeight(float height_)
 {
 	mHeight = height_;
 }
 
-void MapObject::SetName(const std::string& name_)
+void MapObject::setName(const std::string &name_)
 {
 	mName = name_;
 }
 
-void MapObject::SetWidth(float width_)
+void MapObject::setWidth(float width_)
 {
 	mWidth = width_;
 }
 
-void MapObject::SetX(float x_)
+void MapObject::setX(float x_)
 {
 	mX = x_;
 }
 
-void MapObject::SetY(float y_)
+void MapObject::setY(float y_)
 {
 	mY = y_;
 }
 
-MapObjectKind MapObject::GetKind(){
+MapObjectKind MapObject::getKind(){
 	return mKind;
 }
 
-void MapObject::SetKind(MapObjectKind kind_){
+void MapObject::setKind(MapObjectKind kind_){
 	mKind = kind_;
 }
 
-Polyline MapObject::GetPolyline(){
+Polyline MapObject::getPolyline(){
 	return mPolyline;
 }
 
-void MapObject::SetPolyLine(const Polyline& polyline){
+void MapObject::setPolyLine(const Polyline &polyline){
 	mPolyline = polyline;
 }
 

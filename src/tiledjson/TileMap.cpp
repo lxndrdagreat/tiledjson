@@ -33,7 +33,7 @@ TileMap::~TileMap()
 void TileMap::loadFromFile(const char *filename){
 	// by default, we use the json importer
 	JsonTMXImporter* jsonImporter = new JsonTMXImporter();
-	jsonImporter->Load(filename);
+	jsonImporter->load(filename);
 	this->loadFromImporter(jsonImporter);
 	delete jsonImporter;
 }
@@ -42,13 +42,13 @@ void TileMap::loadFromImporter(LevelImporter *levelImporter){
 	
 	// Get Map Data
 	
-	mWidth = levelImporter->GetMapWidth();
-	mHeight = levelImporter->GetMapHeight();
-	mUnitHeight = levelImporter->GetMapUnitHeight();
-	mUnitWidth = levelImporter->GetMapUnitWidth();
+	mWidth = levelImporter->getMapWidth();
+	mHeight = levelImporter->getMapHeight();
+	mUnitHeight = levelImporter->getMapUnitHeight();
+	mUnitWidth = levelImporter->getMapUnitWidth();
 	
 	// Get Tile Sets
-	mTilesets = levelImporter->GetTileSets();
+	mTilesets = levelImporter->getTileSets();
 	
 	for (unsigned int i = 0; i < mTilesets.size(); ++i){
 		mTilesetsFirstGIDMap[mTilesets[i].getFirstGID()] = i;
@@ -62,12 +62,12 @@ void TileMap::loadFromImporter(LevelImporter *levelImporter){
 	}
 	
 	// Get tile properties
-	mTileProperties = levelImporter->GetTileProperties();
+	mTileProperties = levelImporter->getTileProperties();
 	
 
 	
 	// Get all layers
-	mLayers = levelImporter->GetLayers();
+	mLayers = levelImporter->getLayers();
 	for (unsigned int i = 0; i < mLayers.size(); ++i){
 		MapLayer* layer = mLayers[i];
 		if (layer->getType() == TileLayer){
@@ -84,8 +84,8 @@ void TileMap::loadFromImporter(LevelImporter *levelImporter){
 		}
 	}
 
-	mUnitWidth = levelImporter->GetMapUnitWidth();
-	mUnitHeight = levelImporter->GetMapUnitHeight();
+	mUnitWidth = levelImporter->getMapUnitWidth();
+	mUnitHeight = levelImporter->getMapUnitHeight();
 }
 
 unsigned int TileMap::totalTileLayers(){
@@ -124,7 +124,7 @@ std::vector<unsigned int> TileMap::getTilesAtCoordinate(unsigned int x, unsigned
 	std::vector<unsigned int> return_tiles;
 	
 	for (unsigned int i = 0; i < mTileLayers.size(); ++i){
-		return_tiles.push_back(((MapTileLayer*)mLayers[mTileLayers[i]])->GetTileAtCoordinate(x, y));
+		return_tiles.push_back(((MapTileLayer *) mLayers[mTileLayers[i]])->getTileAtCoordinate(x, y));
 	}
 	
 	return return_tiles;
@@ -164,8 +164,8 @@ std::vector<MapObject> TileMap::getObjectsByName(const std::string &name){
 	std::vector<MapObject> objects;
 	
 	for (unsigned int i = 0; i < mObjectGroups.size(); ++i){
-		if (((MapObjectGroup*)mLayers[mObjectGroups[i]])->HasObject(name)){
-			objects.push_back(((MapObjectGroup*)mLayers[mObjectGroups[i]])->GetObjectByName(name));
+		if (((MapObjectGroup *) mLayers[mObjectGroups[i]])->hasObject(name)){
+			objects.push_back(((MapObjectGroup *) mLayers[mObjectGroups[i]])->getObjectByName(name));
 		}
 	}
 	

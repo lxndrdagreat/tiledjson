@@ -22,11 +22,11 @@ public:
 	MapObjectGroup();
 	~MapObjectGroup();
 
-	void					AddObject(MapObject& object_);
-	bool					HasObject(const std::string& name_);
-	MapObject				GetObjectByName(const std::string& name_);
+	void					addObject(MapObject &object_);
+	bool					hasObject(const std::string &name_);
+	MapObject				getObjectByName(const std::string &name_);
 	
-	std::vector<MapObject>	GetObjects();
+	std::vector<MapObject>	getObjects();
 };
 
 }

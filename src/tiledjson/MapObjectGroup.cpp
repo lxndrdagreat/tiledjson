@@ -15,24 +15,24 @@ MapObjectGroup::~MapObjectGroup()
 	mObjects.clear();
 }
 
-void MapObjectGroup::AddObject(MapObject& object_){
+void MapObjectGroup::addObject(MapObject &object_){
 	
 	mObjects.push_back(object_);
 	
-	if (!object_.GetName().empty()){
-		mObjectNameMap[object_.GetName()] = mObjects.size() - 1;
+	if (!object_.getName().empty()){
+		mObjectNameMap[object_.getName()] = mObjects.size() - 1;
 	}
 }
 
-bool MapObjectGroup::HasObject(const std::string& name_){
+bool MapObjectGroup::hasObject(const std::string &name_){
 	return mObjectNameMap.find(name_) != mObjectNameMap.end();
 }
 
-MapObject MapObjectGroup::GetObjectByName(const std::string& name_){
+MapObject MapObjectGroup::getObjectByName(const std::string &name_){
 	return mObjects[mObjectNameMap[name_]];
 }
 
-std::vector<MapObject> MapObjectGroup::GetObjects(){
+std::vector<MapObject> MapObjectGroup::getObjects(){
 	return mObjects;
 }
 

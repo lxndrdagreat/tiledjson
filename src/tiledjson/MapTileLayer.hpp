@@ -20,12 +20,9 @@ public:
 	MapTileLayer(unsigned int width_, unsigned int height_, std::vector<unsigned int>& tiledata_);
 	~MapTileLayer();
 	
-	void SetTileData(unsigned int width_, unsigned int height_, std::vector<unsigned int>& tiledata_);
-
-	const std::string& GetName();
-	void SetName(const std::string& name_);
+	void 						setTileData(unsigned int width_, unsigned int height_, std::vector<unsigned int> &tiledata_);
 	
-	unsigned int GetTileAtCoordinate(unsigned int x, unsigned int y);
+	unsigned int 				getTileAtCoordinate(unsigned int x, unsigned int y);
 };
 
 }

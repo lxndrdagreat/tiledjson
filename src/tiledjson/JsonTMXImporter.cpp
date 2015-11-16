@@ -28,11 +28,11 @@ JsonTMXImporter::~JsonTMXImporter()
 {
 }
 
-bool JsonTMXImporter::Load(const char* filename){
-	return LoadTMXJson(filename);
+bool JsonTMXImporter::load(const char *filename){
+	return loadTMXJson(filename);
 }
 
-bool JsonTMXImporter::LoadTMXJson(const char* filename){
+bool JsonTMXImporter::loadTMXJson(const char *filename){
 
 	Json::Value root;
 	Json::Reader reader;
@@ -184,13 +184,13 @@ bool JsonTMXImporter::LoadTMXJson(const char* filename){
 	return true;
 }
 
-std::vector<MapLayer*> JsonTMXImporter::GetLayers(){
+std::vector<MapLayer*> JsonTMXImporter::getLayers(){
 	std::vector<MapLayer*> layers;
 	
 	for (TMXLayer& tmxlayer : mMapDetails.Layers){
 		if (tmxlayer.Type == TMXLayer_Tile){
 			MapTileLayer* layer = new MapTileLayer();
-			layer->SetTileData(tmxlayer.Width, tmxlayer.Height, tmxlayer.Data);
+			layer->setTileData(tmxlayer.Width, tmxlayer.Height, tmxlayer.Data);
 			layer->setX(tmxlayer.X);
 			layer->setY(tmxlayer.Y);
 			layer->setName(tmxlayer.Name);
@@ -204,19 +204,19 @@ std::vector<MapLayer*> JsonTMXImporter::GetLayers(){
 			
 			for (unsigned int j = 0; j < tmxlayer.Objects.size(); ++j){
 				MapObject obj;
-				obj.SetName(tmxlayer.Objects[j].Name);
-				obj.SetWidth(tmxlayer.Objects[j].Width);
-				obj.SetHeight(tmxlayer.Objects[j].Height);
-				obj.SetX(tmxlayer.Objects[j].X);
-				obj.SetY(tmxlayer.Objects[j].Y);
-				obj.SetKind((MapObjectKind)tmxlayer.Objects[j].Kind);
+				obj.setName(tmxlayer.Objects[j].Name);
+				obj.setWidth(tmxlayer.Objects[j].Width);
+				obj.setHeight(tmxlayer.Objects[j].Height);
+				obj.setX(tmxlayer.Objects[j].X);
+				obj.setY(tmxlayer.Objects[j].Y);
+				obj.setKind((MapObjectKind) tmxlayer.Objects[j].Kind);
 				
 				for (auto& kv : tmxlayer.Objects[j].Properties){
-					obj.SetProperty(kv.first, kv.second);
+					obj.setProperty(kv.first, kv.second);
 				}
 				
 				// polyline
-				if (obj.GetKind() == MapObject_Polyline){
+				if (obj.getKind() == MapObject_Polyline){
 					Polyline pline;
 					for (unsigned int k = 0; k < tmxlayer.Objects[j].polyline.points.size(); ++k){
 						PolylinePoint pp;
@@ -224,10 +224,10 @@ std::vector<MapLayer*> JsonTMXImporter::GetLayers(){
 						pp.y = tmxlayer.Objects[j].polyline.points[k].y;
 						pline.points.push_back(pp);
 					}
-					obj.SetPolyLine(pline);
+					obj.setPolyLine(pline);
 				}
-				
-				group->AddObject(obj);
+
+				group->addObject(obj);
 			}
 			
 			layers.push_back(group);
@@ -242,7 +242,7 @@ std::vector<MapLayer*> JsonTMXImporter::GetLayers(){
 	return layers;
 }
 
-TilePropertyGidMap JsonTMXImporter::GetTileProperties() {
+TilePropertyGidMap JsonTMXImporter::getTileProperties() {
 	TilePropertyGidMap all_properties;
 	
 	for (auto& kv : mMapDetails.AllTilesetProperties){
@@ -258,7 +258,7 @@ TilePropertyGidMap JsonTMXImporter::GetTileProperties() {
 	return all_properties;
 }
 
-std::vector<MapTileSet> JsonTMXImporter::GetTileSets(){
+std::vector<MapTileSet> JsonTMXImporter::getTileSets(){
 	std::vector<MapTileSet> sets;
 	
 	for (unsigned int i = 0; i < mMapDetails.Tilesets.size(); ++i){
@@ -285,11 +285,11 @@ std::vector<MapTileSet> JsonTMXImporter::GetTileSets(){
 	return sets;
 }
 
-int JsonTMXImporter::GetMapWidth(){
+int JsonTMXImporter::getMapWidth(){
 	return mMapDetails.Width;
 }
 
-int JsonTMXImporter::GetMapHeight(){
+int JsonTMXImporter::getMapHeight(){
 	return mMapDetails.Height;
 }
 /*
@@ -363,15 +363,15 @@ std::vector<Tileset> JsonTMXImporter::GetTilesets(){
 	return sets;
 }
 
-std::vector<MapEntity> JsonTMXImporter::GetObjects(){
+std::vector<MapEntity> JsonTMXImporter::getObjects(){
 	std::vector<MapEntity> objects;
 	
 	for (unsigned int i = 0; i < mMapDetails.ObjectGroups.size(); ++i){
 		for (unsigned int j = 0; j < mMapDetails.ObjectGroups[i].Objects.size(); ++j){
 			MapEntity e;
-			e.SetName(mMapDetails.ObjectGroups[i].Objects[j].Name);
+			e.setName(mMapDetails.ObjectGroups[i].Objects[j].Name);
 			e.SetType(mMapDetails.ObjectGroups[i].Objects[j].Type);
-			e.SetProperty(mMapDetails.ObjectGroups[i].Objects[j].Properties);
+			e.setProperty(mMapDetails.ObjectGroups[i].Objects[j].Properties);
 			e.setPosition(sf::Vector2f(mMapDetails.ObjectGroups[i].Objects[j].X, mMapDetails.ObjectGroups[i].Objects[j].Y));
 			
 			e.SetSize(sf::Vector2i(mMapDetails.ObjectGroups[i].Objects[j].Width, mMapDetails.ObjectGroups[i].Objects[j].Height));
@@ -391,7 +391,7 @@ std::vector<MapEntity> JsonTMXImporter::GetObjects(){
 	return objects;
 }*/
 
-std::map<std::string, std::string> JsonTMXImporter::GetMapProperties(){
+std::map<std::string, std::string> JsonTMXImporter::getMapProperties(){
 	return mMapDetails.MapProperties;
 }
 

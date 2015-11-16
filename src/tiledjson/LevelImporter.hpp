@@ -29,25 +29,25 @@ public:
 	LevelImporter();
 	virtual ~LevelImporter();
 
-	virtual int GetMapWidth() { return 0; }
-	virtual int GetMapHeight() { return 0; }
-	virtual int GetMapUnitWidth() { return 0; }
-	virtual int GetMapUnitHeight() { return 0; }
+	virtual int getMapWidth() { return 0; }
+	virtual int getMapHeight() { return 0; }
+	virtual int getMapUnitWidth() { return 0; }
+	virtual int getMapUnitHeight() { return 0; }
 
-	virtual bool Load() { return false; };
-	virtual std::map<std::string, std::string> GetMapProperties() { return std::map<std::string, std::string>(); };
+	virtual bool load() { return false; };
+	virtual std::map<std::string, std::string> getMapProperties() { return std::map<std::string, std::string>(); };
 	
-	virtual std::vector<MapLayer*> GetLayers() { return std::vector<MapLayer*>(); };
+	virtual std::vector<MapLayer*> getLayers() { return std::vector<MapLayer*>(); };
 	
-	virtual std::vector<MapTileLayer*> GetMapTileLayers() { return std::vector<MapTileLayer*>(); };
+	virtual std::vector<MapTileLayer*> getMapTileLayers() { return std::vector<MapTileLayer*>(); };
 	
-	virtual TilePropertyGidMap GetTileProperties() { return TilePropertyGidMap(); };
+	virtual TilePropertyGidMap getTileProperties() { return TilePropertyGidMap(); };
 	
-	virtual std::vector<MapObjectGroup*> GetObjectGroups() { return std::vector<MapObjectGroup*>(); };
+	virtual std::vector<MapObjectGroup*> getObjectGroups() { return std::vector<MapObjectGroup*>(); };
 	
-	virtual std::vector<MapTileSet> GetTileSets() { return std::vector<MapTileSet>(); }
+	virtual std::vector<MapTileSet> getTileSets() { return std::vector<MapTileSet>(); }
 	
-	virtual std::vector<MapImageLayer*> GetImageLayers() { return std::vector<MapImageLayer*>(); };
+	virtual std::vector<MapImageLayer*> getImageLayers() { return std::vector<MapImageLayer*>(); };
 };
 
 }

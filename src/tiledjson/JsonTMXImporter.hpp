@@ -26,7 +26,7 @@ namespace TILEDJSON_NAMESPACE
 class JsonTMXImporter : public LevelImporter
 {
 private:
-	std::string GetFileContents(const char* filename);
+	std::string getFileContents(const char *filename);
 	
 	TMXMapDetails		mMapDetails;
 	
@@ -36,22 +36,22 @@ public:
 	JsonTMXImporter();
 	~JsonTMXImporter();
 
-	bool Load(const char* filename);
+	bool load(const char *filename);
 	
-	bool LoadTMXJson(const char* filename);
+	bool loadTMXJson(const char *filename);
 
-	int GetMapWidth();
-	int GetMapHeight();
-	int GetMapUnitWidth() { return mMapDetails.TileWidth; }
-	int GetMapUnitHeight() { return mMapDetails.TileHeight; }
+	int getMapWidth();
+	int getMapHeight();
+	int getMapUnitWidth() { return mMapDetails.TileWidth; }
+	int getMapUnitHeight() { return mMapDetails.TileHeight; }
 	
-	std::map<std::string, std::string> GetMapProperties();
+	std::map<std::string, std::string> getMapProperties();
 
-	std::vector<MapLayer*> GetLayers();
+	std::vector<MapLayer*> getLayers();
 	
-	TilePropertyGidMap GetTileProperties();
+	TilePropertyGidMap getTileProperties();
 	
-	std::vector<MapTileSet> GetTileSets();
+	std::vector<MapTileSet> getTileSets();
 	
 };
 
