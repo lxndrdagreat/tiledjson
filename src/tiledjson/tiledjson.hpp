@@ -5,6 +5,6 @@
 #ifndef TILEDJSON_TILEDJSON_HPP
 #define TILEDJSON_TILEDJSON_HPP
 
-#include "TMXMap.hpp"
+#include "TiledMap.hpp"
 
 #endif //TILEDJSON_TILEDJSON_HPP
