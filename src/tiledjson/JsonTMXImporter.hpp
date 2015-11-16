@@ -26,7 +26,6 @@ namespace TILEDJSON_NAMESPACE
 class JsonTMXImporter : public LevelImporter
 {
 private:
-	std::string getFileContents(const char *filename);
 	
 	TMXMapDetails		mMapDetails;
 	
