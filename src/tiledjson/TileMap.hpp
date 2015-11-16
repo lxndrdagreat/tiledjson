@@ -62,38 +62,38 @@ public:
 	TileMap();
 	~TileMap();
 
-	void 							LoadFromFile(const char* filename);
-	void 							LoadFromImporter(LevelImporter* levelImporter);
+	void 							loadFromFile(const char *filename);
+	void 							loadFromImporter(LevelImporter *levelImporter);
 	
-	unsigned int 					GetWidth();
-	unsigned int 					GetHeight();
-	unsigned int					GetUnitWidth();
-	unsigned int					GetUnitHeight();
+	unsigned int 					getWidth();
+	unsigned int 					getHeight();
+	unsigned int					getUnitWidth();
+	unsigned int					getUnitHeight();
 	
-	unsigned int 					TotalTileLayers();
-	unsigned int 					TotalObjectLayers();
+	unsigned int 					totalTileLayers();
+	unsigned int 					totalObjectLayers();
 	
-	std::vector<MapLayer*>			GetLayers();
+	std::vector<MapLayer*>			getLayers();
 	
-	MapTileLayer*		 			GetTileLayerByName(const std::string& name_);
+	MapTileLayer*					getTileLayerByName(const std::string &name_);
 	
-	std::vector<unsigned int> 		GetTilesAtCoordinate(unsigned int x, unsigned int y);
+	std::vector<unsigned int> 		getTilesAtCoordinate(unsigned int x, unsigned int y);
 	
-	PropertyCollection 				GetAllPropertiesForCoordinate(unsigned int x, unsigned int y);
+	PropertyCollection 				getAllPropertiesForCoordinate(unsigned int x, unsigned int y);
 	
-	MapObjectGroup*					GetObjectGroupAtIndex(unsigned int index);
-	MapObjectGroup*					GetObjectGroupByName(const std::string& name);
+	MapObjectGroup*					getObjectGroupAtIndex(unsigned int index);
+	MapObjectGroup*					getObjectGroupByName(const std::string &name);
 	
-	std::vector<MapObject>			GetObjectsByName(const std::string& name);
+	std::vector<MapObject>			getObjectsByName(const std::string &name);
 	
-	MapTileSet&						GetTileSetByName(const std::string& name);
-	MapTileSet&						GetTileSetByFirstGID(unsigned int gid);
+	MapTileSet&						getTileSetByName(const std::string &name);
+	MapTileSet&						getTileSetByFirstGID(unsigned int gid);
 	
-	std::map<unsigned int, std::string>	GetTilesetImagePathsWithGIDs();
-	std::vector<std::string>			GetTilesetImagePaths();
+	std::map<unsigned int, std::string>	getTilesetImagePathsWithGIDs();
+	std::vector<std::string>			getTilesetImagePaths();
 	
-	std::vector<MapImageLayer*>			GetImageLayers();
-	MapImageLayer*						GetImageLayerByName(const std::string& name);
+	std::vector<MapImageLayer*>			getImageLayers();
+	MapImageLayer*						getImageLayerByName(const std::string &name);
 };
 
 }
