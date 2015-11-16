@@ -11,8 +11,9 @@
 #include <map>
 #include <vector>
 #include <string>
+#include "tiledjsonconsts.hpp"
 
-namespace te {
+namespace TILEDJSON_NAMESPACE {
 
 typedef std::map<std::string, std::string> TMXProperties;
 	

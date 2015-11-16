@@ -2,7 +2,7 @@
 #include "JsonTMXImporter.hpp"
 #include <iostream>
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 TileMap::TileMap()

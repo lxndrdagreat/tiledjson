@@ -18,11 +18,12 @@
 #include <map>
 #include <vector>
 #include "TMXMiddleware.hpp"
+#include "tiledjsonconsts.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
-class JsonTMXImporter : public te::LevelImporter
+class JsonTMXImporter : public LevelImporter
 {
 private:
 	std::string GetFileContents(const char* filename);

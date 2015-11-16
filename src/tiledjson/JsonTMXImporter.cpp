@@ -16,7 +16,7 @@
 #include "json/json.h"
 #include "Property.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 JsonTMXImporter::JsonTMXImporter()

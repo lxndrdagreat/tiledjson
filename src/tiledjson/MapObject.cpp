@@ -1,6 +1,6 @@
 #include "MapObject.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 MapObject::MapObject()

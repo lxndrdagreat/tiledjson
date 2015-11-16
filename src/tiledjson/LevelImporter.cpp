@@ -10,8 +10,7 @@
  */
 #include "LevelImporter.hpp"
 
-namespace te
-{
+namespace TILEDJSON_NAMESPACE {
 
 LevelImporter::LevelImporter()
 {

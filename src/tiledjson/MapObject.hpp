@@ -4,8 +4,9 @@
 #include <string>
 #include "Property.hpp"
 #include <vector>
+#include "tiledjsonconsts.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 	
 enum MapObjectKind {

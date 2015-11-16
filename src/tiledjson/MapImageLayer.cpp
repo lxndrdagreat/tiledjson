@@ -1,6 +1,6 @@
 #include "MapImageLayer.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 MapImageLayer::MapImageLayer()

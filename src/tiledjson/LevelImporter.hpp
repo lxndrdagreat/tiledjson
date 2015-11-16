@@ -19,9 +19,9 @@
 #include "MapObjectGroup.hpp"
 #include "MapTileSet.hpp"
 #include "MapImageLayer.hpp"
+#include "tiledjsonconsts.hpp"
 
-namespace te
-{
+namespace TILEDJSON_NAMESPACE {
 
 class LevelImporter
 {

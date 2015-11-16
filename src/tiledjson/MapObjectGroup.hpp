@@ -6,8 +6,9 @@
 #include <vector>
 #include "MapObject.hpp"
 #include "MapLayer.hpp"
+#include "tiledjsonconsts.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 class MapObjectGroup : public MapLayer

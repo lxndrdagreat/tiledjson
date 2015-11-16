@@ -1,6 +1,6 @@
 #include "Property.hpp"
 
-namespace te{
+namespace TILEDJSON_NAMESPACE{
 	
 	PropertyCollection::PropertyCollection(){
 	

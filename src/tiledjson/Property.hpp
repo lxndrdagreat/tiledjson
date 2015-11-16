@@ -4,8 +4,9 @@
 #include <string>
 #include <map>
 #include <vector>
+#include "tiledjsonconsts.hpp"
 
-namespace te{
+namespace TILEDJSON_NAMESPACE{
 
 	//typedef std::map<std::string, std::string> TilePropertyMap;	
 	//typedef std::map<std::string, std::string> PropertyCollection;

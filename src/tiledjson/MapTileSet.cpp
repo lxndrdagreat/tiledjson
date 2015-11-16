@@ -1,7 +1,7 @@
 #include "MapTileSet.hpp"
 #include <cmath>
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 MapTileSet::MapTileSet()
@@ -12,123 +12,123 @@ MapTileSet::~MapTileSet()
 {
 }
 
-std::string te::MapTileSet::getFilePath()
+std::string MapTileSet::getFilePath()
 {
 	return mFilePath;
 }
 
-unsigned int te::MapTileSet::getFirstGID()
+unsigned int MapTileSet::getFirstGID()
 {
 	return mFirstGID;
 }
 
-unsigned int te::MapTileSet::getImageHeight()
+unsigned int MapTileSet::getImageHeight()
 {
 	return mImageHeight;
 }
 
-unsigned int te::MapTileSet::getImageWidth()
+unsigned int MapTileSet::getImageWidth()
 {
 	return mImageWidth;
 }
 
-unsigned int te::MapTileSet::getLastGID()
+unsigned int MapTileSet::getLastGID()
 {
 	return mLastGID;
 }
 
-unsigned int te::MapTileSet::getMargin()
+unsigned int MapTileSet::getMargin()
 {
 	return mMargin;
 }
 
-std::string te::MapTileSet::getName()
+std::string MapTileSet::getName()
 {
 	return mName;
 }
 
-unsigned int te::MapTileSet::getSpacing()
+unsigned int MapTileSet::getSpacing()
 {
 	return mSpacing;
 }
 
-unsigned int te::MapTileSet::getTileHeight()
+unsigned int MapTileSet::getTileHeight()
 {
 	return mTileHeight;
 }
 
-unsigned int te::MapTileSet::getTileWidth()
+unsigned int MapTileSet::getTileWidth()
 {
 	return mTileWidth;
 }
 
-void te::MapTileSet::setFilePath(const std::string& path)
+void MapTileSet::setFilePath(const std::string& path)
 {
 	mFilePath = path;
 }
 
-void te::MapTileSet::setFirstGID(unsigned int gid)
+void MapTileSet::setFirstGID(unsigned int gid)
 {
 	mFirstGID = gid;
 }
 
-void te::MapTileSet::setImageHeight(unsigned int height)
+void MapTileSet::setImageHeight(unsigned int height)
 {
 	mImageHeight = height;
 }
 
-void te::MapTileSet::setImageWidth(unsigned int width)
+void MapTileSet::setImageWidth(unsigned int width)
 {
 	mImageWidth = width;
 }
 
-void te::MapTileSet::setLastGID(unsigned int gid)
+void MapTileSet::setLastGID(unsigned int gid)
 {
 	mLastGID = gid;
 }
 
-void te::MapTileSet::setMargin(unsigned int margin)
+void MapTileSet::setMargin(unsigned int margin)
 {
 	mMargin = margin;
 }
 
-void te::MapTileSet::setName(const std::string& name)
+void MapTileSet::setName(const std::string& name)
 {
 	mName = name;
 }
 
-void te::MapTileSet::setSpacing(unsigned int spacing)
+void MapTileSet::setSpacing(unsigned int spacing)
 {
 	mSpacing = spacing;
 }
 
-void te::MapTileSet::setTileHeight(unsigned int height)
+void MapTileSet::setTileHeight(unsigned int height)
 {
 	mTileHeight = height;
 }
 
-void te::MapTileSet::setTileWidth(unsigned int width)
+void MapTileSet::setTileWidth(unsigned int width)
 {
 	mTileWidth = width;
 }
 
-void te::MapTileSet::setPropertiesForTileGID(unsigned int gid, PropertyCollection properties){
+void MapTileSet::setPropertiesForTileGID(unsigned int gid, PropertyCollection properties){
 	mTileProperties[gid] = properties;
 }
 
-PropertyCollection te::MapTileSet::getPropertiesForTileGID(unsigned int gid){
+PropertyCollection MapTileSet::getPropertiesForTileGID(unsigned int gid){
 	return mTileProperties[gid];
 }
 
-TilePropertyGidMap te::MapTileSet::getPropertiesForTiles(){
+TilePropertyGidMap MapTileSet::getPropertiesForTiles(){
 	return mTileProperties;
 }
 
-unsigned int te::MapTileSet::getTilesAcross(){
+unsigned int MapTileSet::getTilesAcross(){
 	return (int)ceilf((float)mImageWidth / (float)(mTileWidth + mSpacing));
 }
 
-unsigned int te::MapTileSet::getTilesDown(){
+unsigned int MapTileSet::getTilesDown(){
 	return mImageHeight / (mTileHeight + mSpacing);
 }
 

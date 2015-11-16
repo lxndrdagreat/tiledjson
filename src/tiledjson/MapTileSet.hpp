@@ -3,8 +3,9 @@
 
 #include <string>
 #include "Property.hpp"
+#include "tiledjsonconsts.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 class MapTileSet

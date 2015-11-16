@@ -2,9 +2,10 @@
 #define MAPLAYER_HPP
 
 #include <string>
+#include "tiledjsonconsts.hpp"
 
-namespace te
-{
+namespace TILEDJSON_NAMESPACE {
+
 
 enum LayerType {
     UnknownLayerType,

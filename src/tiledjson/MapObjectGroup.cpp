@@ -1,6 +1,6 @@
 #include "MapObjectGroup.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 MapObjectGroup::MapObjectGroup()

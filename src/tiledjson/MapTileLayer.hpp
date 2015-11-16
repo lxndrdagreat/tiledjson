@@ -4,8 +4,9 @@
 #include <string>
 #include <vector>
 #include "MapLayer.hpp"
+#include "tiledjsonconsts.hpp"
 
-namespace te
+namespace TILEDJSON_NAMESPACE
 {
 
 class MapTileLayer : public MapLayer

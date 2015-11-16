@@ -1,7 +1,7 @@
 #include "MapLayer.hpp"
 
-namespace te
-{
+namespace TILEDJSON_NAMESPACE {
+
 
 MapLayer::MapLayer()
 {
