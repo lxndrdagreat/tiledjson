@@ -17,6 +17,9 @@ To make loading and storing Tiled map files quick and easy.
   - Layer
   - Object
   - Tile
+- Objects:
+  - Rectangle
+  - Polyline
 
 # Roadmap
 - zlib support
