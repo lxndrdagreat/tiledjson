@@ -78,3 +78,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+### Test Project ###
+/main.cpp
+/CMakeLists.txt
+/jsoncpp
+/.idea
