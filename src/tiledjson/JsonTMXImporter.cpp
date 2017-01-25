@@ -46,7 +46,7 @@ bool JsonTMXImporter::loadTMXJson(const char *filename){
 	// Get Map Properties
 	const Json::Value mapProperties = root["properties"];
 
-	for (Json::ValueIterator itr = mapProperties.begin(); itr != mapProperties.end(); itr++)
+	for (Json::Value::const_iterator itr = mapProperties.begin(); itr != mapProperties.end(); itr++)
 	{
 		std::string key = itr.key().asString();
 		std::string value = mapProperties[key].asString();
@@ -149,7 +149,7 @@ bool JsonTMXImporter::loadTMXJson(const char *filename){
 
 				const Json::Value& objectProperties = objectData["properties"];
 
-				for (Json::ValueIterator itr = objectProperties.begin(); itr != objectProperties.end(); ++itr)
+				for (Json::Value::const_iterator itr = objectProperties.begin(); itr != objectProperties.end(); ++itr)
 				{
 					std::string key = itr.key().asString();
 					std::string value = objectProperties[key].asString();
