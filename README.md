@@ -34,10 +34,35 @@ the near future.
 Using tiledjson is fairly simple:
 
 ```
-tiledjson::TiledMap theMap("path/to/level.json");
+// Create TiledMap object
+tiledjson::TiledMap theMap;
+
+// Tell it to load a map from a file.
+theMap.loadFromFile("path/to/level.json");
 ```
 
-That will attempt to open and parse the JSON file and load the data into the `TiledMap`.
+That will attempt to open and parse the JSON file and load the data into the `TiledMap`
+object, using the included `LevelImporter`, `JsonTMXImporter`.
+
+## Custom Level Importers
+
+In order to load map data into the `TiledMap` class, an importer is needed. Importers
+inherit from `LevelImporter`. `JsonTMXImporter` is included as part of tilejson,
+however you should be able to write your own custom importer, inheriting from
+`LevelImporter`, and use it instead.
+
+Example:
+
+```
+// Create your own importer class, inheriting from LevelImporter.
+// Then, create it and load your level data.
+MyMapImporter* myImporter = new MyMapImporter();
+myImporter->load("path/to/map.file");
+
+// Now, use that custom importer with TiledMap.
+tiledjson:TiledMap theMap;
+theMap.loadFromImporter(myImporter);
+```
 
 ## Features
 
